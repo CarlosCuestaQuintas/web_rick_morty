@@ -16,9 +16,11 @@
         border-radius: 10px;
         width: 500px;
         margin: 20px;
+        height: fit-content;
     }
     .nombre {
-        font-size: 40px;
+        font-size: 60px;
+        text-align: center;
     }
 </style>
 

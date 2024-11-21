@@ -1,14 +1,18 @@
 <template>
-    <div class="contenedor">
+    <div class="contenedor-general">
         <!-- <div v-for="episodio in listaEpisodios">{{ episodio.id }}  {{ episodio.name }}</div> -->
         <EpisodioComponent v-for="episodio in listaEpisodios" :episodio=episodio />
     </div>
 </template>
 
 <style scoped>
-    .contenedor {
+    /* Si pongo contenedor aquí y también en EpisodioComponent.vue entonces los divs contenedor de EpisodioComponent.vue heredarán estos atributos, pero no al revés. Tengo que cambiar los nombres */
+    .contenedor-general {
+        width: 1300px;
+        margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-between;
     }
 </style>
 
