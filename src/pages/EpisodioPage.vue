@@ -1,7 +1,12 @@
 <template>
     <div>{{ id }}</div>
     <!-- <div v-for="p in listaPersonajes">{{ p }}</div> -->
-    <PersonajeComponent v-for="personaje in listaPersonajes" :personaje=personaje />
+    <!-- <PersonajeComponent v-for="personaje in listaPersonajes" :personaje=personaje /> -->
+    <Splide class="splide-personajes" :options="{gap:15,pagination:false,perPage:6,drag:'free',snap:false}">
+        <SplideSlide v-for="personaje in listaPersonajes">
+            <PersonajeComponent :personaje=personaje />
+        </SplideSlide>
+    </Splide>
 </template>
 
 <script setup>
