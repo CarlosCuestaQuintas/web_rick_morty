@@ -1,8 +1,10 @@
 <template>
-    <router-link class="contenedor" :to="{name: 'EpisodioPage', params: {id: episodio.id}}">
-        <div class="nombre">{{ episodio.name }}</div>
-        <div class="episodio">{{ episodio.episode }}</div>
-    </router-link>
+    <div class="contenedor-episodio">
+        <router-link :to="{name: 'EpisodioPage', params: {id: episodio.id}}">
+            <div class="nombre">{{ episodio.name }}</div>
+            <div class="episodio">{{ episodio.episode }}</div>
+        </router-link>
+    </div>
     
     <!-- <div class="contenedor">
         <div class="nombre">{{ episodio.name }}</div>
@@ -11,7 +13,25 @@
 </template>
 
 <style scoped>
-    .contenedor {
+    .contenedor-episodio {
+        border-radius: 10px;
+        background-color: red;
+        padding: 2px;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    .nombre,.episodio {
+        text-align: center;
+    }
+
+    .nombre {
+        font-size: 30px;
+    }
+    /* .contenedor {
         border: 1px solid black;
         border-radius: 10px;
         width: 500px;
@@ -21,7 +41,7 @@
     .nombre {
         font-size: 60px;
         text-align: center;
-    }
+    } */
 </style>
 
 <script setup>

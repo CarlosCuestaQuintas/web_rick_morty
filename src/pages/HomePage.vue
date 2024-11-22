@@ -1,8 +1,17 @@
 <template>
-    <div class="contenedor-general">
+    <!-- <div class="contenedor-general"> -->
         <!-- <div v-for="episodio in listaEpisodios">{{ episodio.id }}  {{ episodio.name }}</div> -->
-        <EpisodioComponent v-for="episodio in listaEpisodios" :episodio=episodio />
-    </div>
+        <div class="logo">
+            <img src="https://www.themoviedb.org/t/p/original/kCyZc7mvqHdeUGpguSGxsWPxqpI.png">
+        </div>
+        <Splide class="splide-episodios" :options="{gap:15,pagination:false,perPage:4}">
+            <SplideSlide v-for="episodio in listaEpisodios">
+                <!-- <EpisodioComponent v-for="episodio in listaEpisodios" :episodio=episodio /> -->
+                <EpisodioComponent :episodio=episodio />
+                <!-- <div>{{ episodio.name }}</div> -->
+            </SplideSlide>
+        </Splide>
+    <!-- </div> -->
 </template>
 
 <style scoped>
@@ -13,6 +22,20 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+    }
+
+    .splide-episodios {
+        width: 1300px;
+        margin: 0 auto;
+    }
+
+    .logo {
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    img {
+        width: 800px;
     }
 </style>
 
