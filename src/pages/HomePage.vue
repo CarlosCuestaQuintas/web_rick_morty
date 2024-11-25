@@ -5,7 +5,7 @@
             <img src="https://www.themoviedb.org/t/p/original/kCyZc7mvqHdeUGpguSGxsWPxqpI.png">
         </div>
         <Splide class="splide-episodios" :options="{gap:15,pagination:false,perPage:4}">
-            <SplideSlide v-for="episodio in listaEpisodios">
+            <SplideSlide class="slide-episodio" v-for="episodio in listaEpisodios">
                 <!-- <EpisodioComponent v-for="episodio in listaEpisodios" :episodio=episodio /> -->
                 <EpisodioComponent :episodio=episodio />
                 <!-- <div>{{ episodio.name }}</div> -->
@@ -27,6 +27,10 @@
     .splide-episodios {
         width: 1300px;
         margin: 0 auto;
+    }
+
+    .slide-episodio {
+        height: max-content;
     }
 
     .logo {
