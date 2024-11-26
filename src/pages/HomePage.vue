@@ -1,52 +1,21 @@
 <template>
-    <!-- <div class="contenedor-general"> -->
-        <!-- <div v-for="episodio in listaEpisodios">{{ episodio.id }}  {{ episodio.name }}</div> -->
         <div class="logo">
             <img src="https://www.themoviedb.org/t/p/original/kCyZc7mvqHdeUGpguSGxsWPxqpI.png">
         </div>
         <Splide class="splide-episodios" :options="{gap:15,pagination:false,perPage:4}">
             <SplideSlide class="slide-episodio" v-for="episodio in listaEpisodios">
-                <!-- <EpisodioComponent v-for="episodio in listaEpisodios" :episodio=episodio /> -->
                 <EpisodioComponent :episodio=episodio />
-                <!-- <div>{{ episodio.name }}</div> -->
             </SplideSlide>
         </Splide>
-    <!-- </div> -->
 </template>
 
 <style scoped>
-    /* Si pongo contenedor aquí y también en EpisodioComponent.vue entonces los divs contenedor de EpisodioComponent.vue heredarán estos atributos, pero no al revés. Tengo que cambiar los nombres */
-    .contenedor-general {
-        width: 1300px;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .splide-episodios {
-        width: 1300px;
-        margin: 0 auto;
-    }
-
-    .slide-episodio {
-        height: max-content;
-    }
-
-    .logo {
-        width: fit-content;
-        margin: 0 auto;
-    }
-
-    img {
-        width: 800px;
-    }
+    @import '../assets/scss/home-page.scss';
 </style>
 
 <script setup>
     import { ref, onBeforeMount, onMounted } from 'vue';
     import EpisodioComponent from '@/components/EpisodioComponent.vue';
-    // Creo que aquí irá otro import
 
     let listaEpisodios = ref([]);
 
