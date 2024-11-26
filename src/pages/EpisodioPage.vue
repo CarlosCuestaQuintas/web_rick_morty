@@ -1,6 +1,5 @@
 <template>
-    <!-- <div v-for="p in listaPersonajes">{{ p }}</div> -->
-    <!-- <PersonajeComponent v-for="personaje in listaPersonajes" :personaje=personaje /> -->
+    <!-- TODO: un botón de volver atrás -->
     <div class="titulo-episodio">{{ episodio.name }}</div>
     <Splide class="splide-personajes" :options="{gap:15,pagination:false,perPage:6,drag:'free',snap:false}">
         <SplideSlide v-for="personaje in listaPersonajes">
@@ -10,12 +9,7 @@
 </template>
 
 <style scoped>
-    .titulo-episodio {
-        color: white;
-        font-size: 60px;
-        text-align: center;
-        text-shadow: black 1px 0 10px;
-    }
+    @import '../assets/scss/episodio-page.scss';
 </style>
 
 <script setup>
@@ -29,12 +23,8 @@
     let listaPersonajes = ref([])
 
     onBeforeMount(async () => {
-        // let data = await fetch('https://rickandmortyapi.com/api/character/' + id.value);
         episodio.value = await fetch('https://rickandmortyapi.com/api/episode/' + id.value).then(response => response.json());
-        // data = await data.json();
         console.log(episodio.value);
-        // listaPersonajes.value = data.characters;
-        // console.log(listaPersonajes.value);
         let data = episodio.value.characters;
         console.log(data);
 
