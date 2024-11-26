@@ -1,6 +1,6 @@
 <template>
     <div class="contenedor-personaje">
-        <div class="nombre-personaje">{{ datos.name }}</div>
+        <div class="nombre-personaje titulo">{{ datos.name }}</div>
         <img :src=datos.image>
 
         <div class="contenedor-datos">

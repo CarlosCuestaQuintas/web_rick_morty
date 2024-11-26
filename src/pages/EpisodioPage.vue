@@ -1,16 +1,12 @@
 <template>
     <!-- TODO: un botón de volver atrás -->
-    <div class="titulo-episodio">{{ episodio.name }}</div>
+    <div class="titulo-episodio titulo">{{ episodio.name }}</div>
     <Splide class="splide-personajes" :options="{gap:15,pagination:false,perPage:6,drag:'free',snap:false}">
         <SplideSlide v-for="personaje in listaPersonajes">
             <PersonajeComponent :personaje=personaje />
         </SplideSlide>
     </Splide>
 </template>
-
-<style scoped>
-    @import '../assets/scss/episodio-page.scss';
-</style>
 
 <script setup>
     import { ref, onBeforeMount } from 'vue';
