@@ -1,0 +1,17 @@
+.contenedor-episodio {
+    border-radius: 10px;
+    background-color: red;
+    padding: 2px;
+    
+    a {
+        color: white;
+    }
+
+    .nombre,.episodio {
+        text-align: center;
+    }
+
+    .nombre {
+        font-size: 30px;
+    }
+}
