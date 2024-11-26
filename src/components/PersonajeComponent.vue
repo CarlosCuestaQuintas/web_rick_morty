@@ -7,11 +7,7 @@
 </template>
 
 <style scoped>
-    .nombre-personaje {
-        color: white;
-        font-size: 20px;
-        text-align: center;
-    }
+    @import '../assets/scss/personaje-component.scss';
 </style>
 
 <script setup>
