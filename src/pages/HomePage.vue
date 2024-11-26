@@ -44,7 +44,7 @@
 </style>
 
 <script setup>
-    import { ref, onBeforeMount } from 'vue';
+    import { ref, onBeforeMount, onMounted } from 'vue';
     import EpisodioComponent from '@/components/EpisodioComponent.vue';
     // Creo que aquí irá otro import
 
