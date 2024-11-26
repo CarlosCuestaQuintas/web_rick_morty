@@ -1,9 +1,10 @@
 <template>
     <div class="contenedor-personaje">
+        <div class="nombre-personaje">{{ datos.name }}</div>
         <img :src=datos.image>
 
         <div class="contenedor-datos">
-            <div class="seccion-datos" v-if="datos.name">
+            <div class="seccion-datos">
                 <div class="titulo-dato">Nombre</div>
                 <div class="info-dato">{{ datos.name }}</div>
             </div>
@@ -41,6 +42,45 @@
         
     </div>
 </template>
+
+<style scoped>
+    .nombre-personaje {
+        color: white;
+        font-size: 60px;
+        text-align: center;
+        text-shadow: black 1px 0 10px;
+    }
+
+    img {
+        width: 400px;
+    }
+
+    .contenedor-personaje {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenedor-datos {
+        width: 300px;
+        background-color: white;
+        border: 2px solid black;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .titulo-dato {
+        background-color: #101010;
+        font-size: 30px;
+        color: white;
+        border-bottom: 1px solid black;
+    }
+
+    .info-dato {
+        background-color: #1f1f1f;
+        color: white;
+    }
+</style>
 
 <script setup>
     import { ref, onBeforeMount } from 'vue';
