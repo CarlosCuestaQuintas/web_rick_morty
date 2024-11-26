@@ -1,34 +1,44 @@
 <template>
-    <div class="contendor">
+    <div class="contenedor-personaje">
         <img :src=datos.image>
-        <div class="info" v-if="datos.name">
-            <div class="titulo">Nombre</div>
-            <div class="dato">{{ datos.name }}</div>
+
+        <div class="contenedor-datos">
+            <div class="seccion-datos" v-if="datos.name">
+                <div class="titulo-dato">Nombre</div>
+                <div class="info-dato">{{ datos.name }}</div>
+            </div>
+            
+            <div class="seccion-datos" v-if="datos.status">
+                <div class="titulo-dato">Estado</div>
+                <div class="info-dato">{{ datos.status }}</div>
+            </div>
+            
+            <div class="seccion-datos" v-if="datos.species">
+                <div class="titulo-dato">Especie</div>
+                <div class="info-dato">{{ datos.species }}</div>
+            </div>
+            
+            <div class="seccion-datos" v-if="datos.type">
+                <div class="titulo-dato">Tipo</div>
+                <div class="info-dato">{{ datos.type }}</div>
+            </div>
+            
+            <div class="seccion-datos" v-if="datos.gender">
+                <div class="titulo-dato">Género</div>
+                <div class="info-dato">{{ datos.gender }}</div>
+            </div>
+            
+            <div class="seccion-datos" v-if="datos.origin">
+                <div class="titulo-dato">Origen</div>
+                <div class="info-dato">{{ datos.origin.name }}</div>
+            </div>
+            
+            <div class="seccion-datos" v-if="datos.location">
+                <div class="titulo-dato">Ubicación</div>
+                <div class="info-dato">{{ datos.location.name }}</div>
+            </div>
         </div>
-        <div class="info" v-if="datos.status">
-            <div class="titulo">Estado</div>
-            <div class="dato">{{ datos.status }}</div>
-        </div>
-        <div class="info" v-if="datos.species">
-            <div class="titulo">Especie</div>
-            <div class="dato">{{ datos.species }}</div>
-        </div>
-        <div class="info" v-if="datos.tipo">
-            <div class="titulo">Tipo</div>
-            <div class="dato">{{ datos.tipo }}</div>
-        </div>
-        <div class="info" v-if="datos.gender">
-            <div class="titulo">Género</div>
-            <div class="dato">{{ datos.gender }}</div>
-        </div>
-        <div class="info" v-if="datos.origin">
-            <div class="titulo">Origen</div>
-            <div class="dato">{{ datos.origin.name }}</div>
-        </div>
-        <div class="info" v-if="datos.location">
-            <div class="titulo">Ubicación</div>
-            <div class="dato">{{ datos.location.name }}</div>
-        </div>
+        
     </div>
 </template>
 
